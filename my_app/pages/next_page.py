@@ -7,8 +7,11 @@ scaler=StandardScaler()
 st.title("Next Page")
 res=""
 
-with open("./model.pkl", "rb") as f:  
-    model = pickle.load(f)  
+import os
+
+model_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "model.pkl"))
+with open(model_path, "rb") as f:
+    model = pickle.load(f)
 
 
 # Retrieve stored data
